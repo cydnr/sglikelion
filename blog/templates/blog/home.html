@@ -1,0 +1,8 @@
+{% for post in posts %}
+
+    <h3>{{post.title}}</h3><br>
+    {{post.pub_date}}<br>
+    {{post.writer}}<br>
+    {{post.body|linebreaks}}<br>
+    <hr>
+{% endfor %}
