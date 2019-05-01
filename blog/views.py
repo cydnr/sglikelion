@@ -24,4 +24,4 @@ def new(request):
     
 def post_detail(request, index):
     post = get_object_or_404(Post, pk=index)
-    return render(request, 'post_detail.html', {'post': post})
+    return render(request, 'blog/post_detail.html', {'post': post})
