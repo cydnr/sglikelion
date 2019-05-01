@@ -19,6 +19,7 @@ body {
   color: #212529;
   font-family: 'HangeulNuri-Bold';
   text-align: center;
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/circuit.png");
 }
 
 p {
@@ -53,6 +54,10 @@ a:focus, a:hover {
 blockquote {
   font-style: italic;
   color: #868e96;
+}
+
+.container new{
+  color: red;
 }
 
 .section-heading {
@@ -188,10 +193,8 @@ header.masthead .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #212529;
-  opacity: 0.5;
+  height: 70%;
+  width: 70%;
 }
 
 header.masthead .page-heading,

@@ -1,0 +1,26 @@
+{% load static %}
+
+ <head>
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href = "{% static 'blog/css/style.css' %}" />
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+<h1>~~~~다들 소리 질러~~~~</h1>
+
+  <!-- Page Header -->
+
+  
+   <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <form method="POST" class="post-form"> {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
