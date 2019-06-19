@@ -33,7 +33,7 @@ def post_detail(request, index):
 def post_edit(request, index):
     post = get_object_or_404(Post, pk=index)
     if request.method == 'POST':
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save(commit = False)
             post.author = request.user

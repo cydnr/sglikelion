@@ -17,6 +17,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from blog import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,3 +28,5 @@ urlpatterns = [
     url(r'^post/(?P<index>\d+)/edit/$',views.post_edit, name="post_edit"),
     url(r'^post/(?P<index>\d+)/delete/$',views.post_delete, name="post_delete"),
 ]
+
+urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
