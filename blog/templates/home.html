@@ -1,0 +1,15 @@
+<h1>절벽톤 + 이미지</h1><br><br>
+
+<a href="{% url 'new' %}"> 글 쓰러 가기</a><br><br>
+
+{% for post in posts %}
+    {% if post.category == "public" %}
+        <a href="{% url 'post_detail' index=post.pk %}">{{post.title}}</a><br>
+        {{post.pub_date}}<br>
+        {{post.writer}}<br>
+        {{post.body|linebreaks}}<br>
+    {% else %}
+        <p> 비밀글입니다. </p>
+    {% endif %}
+    <hr>
+{% endfor %}
