@@ -1,0 +1,51 @@
+button.navbar-toggler:focus{
+    outline: none;
+}
+
+.navbar-dark .navbar-toggler{
+    border: none;
+}
+
+.carousel-item:nth-child(1){
+    background-image: url(../images/coding.jpg);
+}
+
+.carousel-item:nth-child(2){
+    background-image: url(../images/cutelion.jpg);
+}
+
+.carousel-item:nth-child(3){
+    background-image: url(../images/sglikelion.JPG);
+}
+
+.carousel-item{
+    height:90vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cover {
+    height: 90vh;
+}
+
+.clubs{
+    padding: 120px 0;
+    text-align: center;
+}
+
+.club_title{
+    font-size:2.5rem;
+    line-height: 1.5;
+}
+
+.club_category{
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.card{
+    text-align: left;
+}

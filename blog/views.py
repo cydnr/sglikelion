@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404
 
 def home(request):
     posts = Post.objects.all
-    return render(request, 'home.html',{'posts_list':posts})
+    return render(request, 'blog/home.html',{'posts_list':posts})
     
 def new(request):
     if request.method == 'POST':
@@ -24,11 +24,11 @@ def new(request):
     else:
         form = PostForm()
             
-    return render(request, 'new.html', {'form':form})
+    return render(request, 'blog/new.html', {'form':form})
     
 def post_detail(request, index):
     post = get_object_or_404(Post, pk=index)
-    return render(request, 'post_detail.html',{'post':post})
+    return render(request, 'blog/post_detail.html',{'post':post})
     
 def post_edit(request, index):
     post = get_object_or_404(Post, pk=index)
@@ -44,7 +44,7 @@ def post_edit(request, index):
     else:
         form = PostForm(instance = post)
             
-    return render(request, 'post_edit.html', {'form':form})
+    return render(request, 'blog/post_edit.html', {'form':form})
     
 def post_delete(request, index):
     post = get_object_or_404(Post, pk=index)
