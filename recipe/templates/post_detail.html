@@ -1,0 +1,11 @@
+<div class="post">
+    {% if post.pub_date %}
+        <div class="date">
+            {{post.pub_date}}
+        </div>
+    {% endif %}
+    <h1>{{post.title}}</h1>
+    <p>{{post.body|linebreaksbr }}</p><br>
+    <a href="{% url 'post_edit' index=post.pk %}">수정하기</a>
+    <a href="{% url 'post_delete' index=post.pk %}">삭제하기</a>
+</div>
