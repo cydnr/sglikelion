@@ -1,10 +1,45 @@
-<h1>게시판</h1><br>
-
-<a href="{% url 'new' %}">글쓰기</a>
-{% for post in posts_list %}
-   <a href="{% url 'post_detail' index=post.pk %}"><h3>{{post.title}}</h3></a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>게시판</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+  <style>
+  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable();
+  } );
+  </script>
+</head>
+<body>
+ 
+ <h1>게시판</h1><br>
+  <a href="{% url 'new' %}">글쓰기</a>
+  <p>Date: <input type="text" id="datepicker"></p>
+  <div id="draggable" class="ui-widget-content">
+   <p>움직여 보아요!</p>
+  </div>
+  {% for post in posts_list %}
+    <a href="{% url 'post_detail' index=post.pk %}"><h3>{{post.title}}</h3></a>
     <p>{{post.pub_date}}</p>
     <p>{{post.body|linebreaks}}</p>
     <p>작성자: {{post.writer}}</p>
     <hr>
-{%endfor%}
+  {%endfor%}
+ 
+</body>
+</html>
+
