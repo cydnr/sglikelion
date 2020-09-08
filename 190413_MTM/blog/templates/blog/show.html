@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>제목 : {{post.title}}</h2><br>
+    <h3>내용</h3>{{post.content|linebreaks}}<br><br>
+    <p>작성자 : {{post.author}}</p>
+    <p>작성일 : {{post.pub_date}}</p><br>
+    <p><a href="{% url 'edit' id=post.pk %}">Edit</a></p>
+    <p><a href="{% url 'delete' post.id %}">Delete</a></p>
+    <a href="{% url 'home' %}">Back</a><br><br>
+
+    <p>
+        <a href="{% url 'follow' id=post.pk %}">팔로우하기</a>
+        <b>{{ follow.count }} 명이 팔로우합니다.</b>
+        <p> 팔로우 중인 사람 : {% for f in follow %} {{f.author}} {% endfor %}</p>
+    </p>
+
+    <div class="container">
+        <form action="{% url 'commentcreate' pk=post.pk %}" method="POST" enctype="multipart/form=data">
+            {% csrf_token %}
+            <p>내용 : {{form.content}}<p>
+            <p>작성자 : {{form.author}}</p>
+            <input type="submit" value="Add comment">
+        </form>
+    </div>
+
+</div>
+
+<h4>댓글 목록</h4>
+    {% for comment in post.comments.all %}
+        <div class="comment">
+            <div class="date">{{ comment.pub_date }}, 작성자 : {{ comment.author }}</div>
+            <p>{{ comment.content|linebreaks }}</p>
+            ------------------------------
+        </div>
+    {% empty %}
+        <p>No comments here yet :(</p>
+    {% endfor %}
