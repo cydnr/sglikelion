@@ -1,0 +1,6 @@
+<h1> 나만의 레시피를 공유해주세요 </h1>
+
+<form method="POST" class="post-form"> {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
