@@ -6,6 +6,7 @@
 
 #### :heavy_check_mark: 목차
 
+- 20190321 MTV : wordcount
 - 20190325 CR
 - 20190328 UD
 - 20190401 절벽톤
