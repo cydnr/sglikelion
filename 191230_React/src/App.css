@@ -1,0 +1,21 @@
+.PostingPaper {
+  padding : 1rem;
+  margin : 1rem;
+}
+
+.PostingForm {
+display: flex;
+flex-direction: column; 
+}
+
+.card{
+  margin: 1rem 1rem 1rem 1rem;
+}
+
+.thetitle{
+  text-align: center;
+}
+
+body{
+  background-color: #f5f5f5;
+}
