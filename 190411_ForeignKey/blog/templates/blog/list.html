@@ -1,0 +1,9 @@
+<h3><a href="{% url 'post-create' %}">게시글 작성</a></h3>
+<div>
+    {% for post in posts %}
+    <a href="{% url 'post-detail' pk=post.pk %}">{{post.title}}</a>
+    <div>{{post.author}}</div>
+    <div>{{post.timestmap}}</div>
+    <hr>
+    {% endfor %}
+</div>
