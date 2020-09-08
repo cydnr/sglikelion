@@ -1,0 +1,105 @@
+.cate_head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50px;
+  grid-template-areas: "cate1 cate2 cate3 cate4 cate5 cate6 cate7 cate8 cate9";
+  width : 1125px;
+  background-color: #f0f0f0;
+  margin: 50px auto 0px auto;
+  text-align: center;
+}
+
+.cate1, .cate2, .cate3, .cate4, .cate5, .cate6, .cate7, .cate8, .cate9 {
+    margin:auto;
+    font-weight: bold;
+}
+
+.cate1 { grid-area: cate1; }
+
+.cate2 { grid-area: cate2; }
+
+.cate3 { grid-area: cate3; }
+
+.cate4 { grid-area: cate4; }
+
+.cate5 { grid-area: cate5; }
+
+.cate6 { grid-area: cate6; }
+
+.cate7 { grid-area: cate7; }
+
+.cate8 { grid-area: cate8; }
+
+.cate9 { grid-area: cate9; }
+
+.cate_contents {
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
+  grid-template-rows: 50px 130px 130px 130px;
+  grid-template-areas: "sub_head reco_head reco_head" "sub_cate reco_main reco_sub1" "sub_cate reco_main reco_sub2" "sub_cate reco_main reco_sub3";
+  width: 1050px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: auto;
+}
+
+.reco_main, .reco_sub1, .reco_sub2, .reco_sub3{
+    border: 1px solid #ccc;
+}
+
+.sub_head, .reco_head{
+    font-weight: bold;
+}
+
+.sub_head { grid-area: sub_head; }
+
+.sub_cate {
+    grid-area: sub_cate;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width:90%;
+    padding-top: 15px;
+}
+
+.sub_cate ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.sub_cate ul li{
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.reco_main {
+    grid-area: reco_main;
+    padding: 20px;
+}
+
+.reco_main img{
+    height: 272px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.reco_head { grid-area: reco_head; }
+
+.reco_sub1 { grid-area: reco_sub1; }
+
+.reco_sub2 { grid-area: reco_sub2; }
+
+.reco_sub3 { grid-area: reco_sub3; }
+
+.reco_sub1, .reco_sub2, .reco_sub3{
+    padding: 15px;
+}
+
+.reco_sub1 img, .reco_sub2 img, .reco_sub3 img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 150px;
+    height: 100px;
+}
