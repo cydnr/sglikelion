@@ -7,6 +7,7 @@
 #### :heavy_check_mark: 목차
 
 - 20190328 UD
+- 20190401 절벽톤
 - 20190413 MTM
 - 20190509 JS
 - 20190520 Class Based View
