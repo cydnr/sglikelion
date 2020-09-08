@@ -1,0 +1,97 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="cover">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class='d-flex flex-column h-100 justify-content-center align-items-center'>
+              <h4 class='cover_title text-white'>Again,</h4>
+              <p class='cover_text text-white'>아가인</p>
+              <a class='btn btn-warning text-white'>사진 보기</a> 
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class='d-flex flex-column h-100 justify-content-center align-items-center'>
+              <h4 class='cover_title text-white'>멋쟁이 사자처럼 서강대</h4>
+              <p class='cover_text text-white'>내 아이디어를 내 손으로 실현한다</p>
+              <a class='btn btn-warning text-white'>자세히 보기</a> 
+            </div>
+        </div>
+        <div class="carousel-item">
+          <div class='d-flex flex-column h-100 justify-content-center align-items-center'>
+            <h4 class='cover_title text-white'>멋쟁이 사자처럼 서강대</h4>
+            <p class='cover_text text-white'>내 아이디어를 내 손으로 실현한다</p>
+            <a class='btn btn-warning text-white'>자세히 보기</a> 
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+</section>
+
+<section class='club'>
+  <header class='club_header'>
+    <h2 class='club_title'>
+      <span class='club_category'>Clubs</span>
+      진행중인 소모임
+    </h2>
+  </header>
+  
+  <div class='container'>
+    <div class='row'>
+      <div class='col-lg-4 col-sm-12'>
+        <div class="card">
+          <img src="{% static 'blog/images/babylion.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-warning text_white">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class='col-lg-4 col-sm-12'>
+        <div class="card">
+          <img src="{% static 'blog/images/babylion.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class='col-lg-4 col-sm-12'>
+        <div class="card">
+          <img src="{% static 'blog/images/babylion.jpg'%}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</section>
+
+<h1>절벽톤게시판</h1><br>
+
+<a href="{% url 'new' %}">글쓰기</a>
+{% for post in posts_list %}
+   <a href="{% url 'post_detail' index=post.pk %}"><h3>{{post.title}}</h3></a>
+    <p>{{post.pub_date}}</p>
+    <p>{{post.body|linebreaks}}</p>
+    <p>작성자: {{post.writer}}</p>
+    <hr>
+{%endfor%}
+
+{% endblock %}
